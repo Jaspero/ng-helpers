@@ -4,7 +4,7 @@ import {FormGroup} from '@angular/forms';
 @Directive({
   selector: '[jpFormTouchOnHover]'
 })
-export class TouchFormOnHoverDirective {
+export class FormTouchOnHoverDirective {
 
   /**
    * Entry FormGroup which to iterate over
@@ -23,7 +23,7 @@ export class TouchFormOnHoverDirective {
   }
 
   private _markFormGroupTouched(formGroup: FormGroup) {
-    (Object.values(formGroup.controls) as any[])
+    (Object as any).values(formGroup.controls)
       .forEach(control => {
         control.markAsTouched();
 
