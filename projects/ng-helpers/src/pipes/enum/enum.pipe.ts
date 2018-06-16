@@ -1,12 +1,27 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
+/**
+ * Returns an array of {key: number, value: string} objects.
+ * Most useful in *ngFor iterations
+ *
+ * @example
+ * <div *ngFor="let item of someEnum | enum></div>
+ *
+ */
 @Pipe({
   name: 'enum'
 })
 export class EnumPipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
-    return null;
+  public transform(value): Array<{key: number; value: string}> {
+    const keys = [];
+    for (const enumMember in value) {
+      if (value[enumMember]) {
+        const val = parseInt(enumMember, 10);
+        if (!isNaN(val)) {
+          keys.push({key: val, value: value[enumMember]});
+        }
+      }
+    }
+    return keys;
   }
-
 }
