@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Jaspero/ng-helpers.svg?branch=master)](https://travis-ci.org/jaspero/ng-helpers)
+[![Build Status](https://travis-ci.org/Jaspero/ng-helpers.svg?branch=master)](https://travis-ci.org/Jaspero/ng-helpers)
 [![NPM Version](https://img.shields.io/npm/v/@jaspero/ng-helpers.svg)](https://www.npmjs.com/package/@jaspero/ng-helpers)
 
 # @jaspero/ng-helpers
