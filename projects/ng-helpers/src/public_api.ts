@@ -19,6 +19,9 @@ export * from './directives/stop-propagation/stop-propagation.directive';
 export * from './directives/form-touch-on-hover/form-touch-on-hover.module';
 export * from './directives/form-touch-on-hover/form-touch-on-hover.directive';
 
+export * from './directives/debounce-change/debounce-change.module';
+export * from './directives/debounce-change/debounce-change.directive';
+
 /**
  * Pipes
  */
