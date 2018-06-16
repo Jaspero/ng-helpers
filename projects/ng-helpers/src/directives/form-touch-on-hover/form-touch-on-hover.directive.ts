@@ -13,7 +13,6 @@ export class FormTouchOnHoverDirective {
 
   /**
    * Outputs when form finish iterating
-   * @type {EventEmitter<any>}
    */
   @Output() jpFormTouched = new EventEmitter();
 

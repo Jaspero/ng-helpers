@@ -27,19 +27,16 @@ export class ClickOutsideDirective extends RxDestroy implements AfterViewInit {
 
   /**
    * Any valid html event
-   * @type {string}
    */
   @Input() clickOutsideEventType = 'click';
 
   /**
    * if true jpClickOutside doesn't emit
-   * @type {boolean}
    */
   @Input() clickOutsideBlock = false;
 
   /**
    * Emits when triggered event doesn't contain this e
-   * @type {EventEmitter<MouseEvent>}
    */
   @Output() jpClickOutside = new EventEmitter<MouseEvent>();
 

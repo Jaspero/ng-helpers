@@ -23,19 +23,16 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
 
   /**
    * Any valid html event
-   * @type {string}
    */
   @Input() stopPropagationEventType = 'click';
 
   /**
    * Should preventDefault also be called
-   * @type {boolean}
    */
   @Input() preventDefault = false;
 
   /**
    * Outputs the input event
-   * @type {EventEmitter<any>}
    */
   @Output() jpStopPropagation = new EventEmitter();
 
