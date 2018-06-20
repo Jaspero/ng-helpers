@@ -5,6 +5,10 @@
 
 A collection of useful components, directives and pipes for Angular applications.
 
+Every item (component, directive and pipe) is published in a separate module, making it
+easy to just import modules your application will use and not increase bundle size 
+unnecessarily.
+
   - [Components](#components)
   - [Directives](#directives)
     - [ClickOutside](#clickoutsidedirective)
@@ -37,7 +41,7 @@ if the event doesn't contain the target element.
 
 #### Example
 
-```html
+```angular2html
 <div (jpClickOutside)="doSomething()"></div>
 ``` 
 
@@ -61,23 +65,105 @@ if the event doesn't contain the target element.
 
 ### FormTouchOnHoverDirective
 
+#### Example
+
+#### Use Cases
+
+#### Outputs
+
+#### Inputs
+
 ### StopPropagationDirective
 
 Listens for the emitted event on the target element and simply 
 forwards it along and calls `event.stopPropagation()`.
+
+#### Example
+
+#### Use Cases
+
+#### Outputs
+
+#### Inputs
 
 ### DebounceChangeDirective
 
 Listens for the emitted event on the target element and simply
 forwards it along after `debounceTime`.
 
+#### Example
+
+#### Use Cases
+
+#### Outputs
+
+#### Inputs
+
 ## Pipes 
 
 ### EnumPipe
 
+A very simple pipe that returns an array of `{key: number, value: string}` objects from an enum.
+
+#### Example
+
+```angular2html
+  <select>
+    <option *ngFor="let item of someEnum | jpEnum" [value]="item.key">
+      {{item.value}}
+    </option>
+  </select>
+```
+
+#### Use Cases
+
+- It's most commonly used to easily iterate over an enum in a select
+
+#### Input Value
+
+|value|type|description|
+|---|---|---|
+|value|enum|Supports any enum value. Provide it in typescript `someEnum = SomeEnum` to iterate over in html. 
+
+#### Parameters
+
+No parameters for `EnumPipe`
+
 ### SanitizePipe
 
+Simplifies using of `DomSanitizer`. The pipe accepts any value and then tries to sanitize it to the desired format.
+
+#### Example
+
+```angular2html
+<div [innerHtml]="unsanitizedHtml | jpSanitize:'html'"></div>
+```
+
+#### Use Cases
+
+- Rendering raw html, styles...
+
+#### Input Value
+
+|value|type|description|
+|---|---|---|
+|value|string|Accepts any unsanitized string and runs it through `DomSanitizer`  
+
+#### Parameters
+
+|param|type|default|description|
+|---|---|---|---|
+|type|html or style or script or url or resourceUrl|html|Type of entry value. This determines what `DomSanitizer` method get's used|
+
 ### TimePassedPipe
+
+#### Example
+
+#### Use Cases
+
+#### Input Value
+
+#### Parameters
 
 ## Helper Classes
 
@@ -97,3 +183,7 @@ interval(1000)
   )
   .subscribe(_ => {});
 ```
+
+## License
+
+MIT © [Jaspero Ltd](mailto:info@jaspero.co)
