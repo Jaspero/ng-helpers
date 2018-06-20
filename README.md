@@ -14,6 +14,7 @@ A collection of useful components, directives and pipes for Angular applications
   - [Pipes](#pipes)
     - [EnumPipe](#enumpipe)
     - [SanitizePipe](#sanitizepipe)
+    - [TimePassedPipe](#timepassedpipe)
   - [Helper Classes](#helper-classes)
     - [RxDestroy](#rxdestroy)
 
@@ -63,7 +64,7 @@ if the event doesn't contain the target element.
 ### StopPropagationDirective
 
 Listens for the emitted event on the target element and simply 
-forwards it along and calls 'event.stopPropagation()'.
+forwards it along and calls `event.stopPropagation()`.
 
 ### DebounceChangeDirective
 
@@ -75,6 +76,8 @@ forwards it along after `debounceTime`.
 ### EnumPipe
 
 ### SanitizePipe
+
+### TimePassedPipe
 
 ## Helper Classes
 

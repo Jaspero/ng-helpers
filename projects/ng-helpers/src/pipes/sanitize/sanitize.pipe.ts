@@ -9,7 +9,7 @@ import {DomSanitizer} from '@angular/platform-browser';
  * <div [innerHtml]="someHtmlValue | sanitize"></div>
  */
 @Pipe({
-  name: 'sanitize'
+  name: 'jpSanitize'
 })
 export class SanitizePipe implements PipeTransform {
   constructor(

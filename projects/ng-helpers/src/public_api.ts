@@ -30,3 +30,6 @@ export * from './pipes/enum/enum.pipe';
 
 export * from './pipes/sanitize/sanitize.module';
 export * from './pipes/sanitize/sanitize.pipe';
+
+export * from './pipes/time-passed/time-passed.module';
+export * from './pipes/time-passed/time-passed.pipe';
