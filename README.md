@@ -11,14 +11,15 @@ unnecessarily.
 
   - [Components](#components)
   - [Directives](#directives)
-    - [ClickOutside](#clickoutsidedirective)
-    - [FormTouchOnHover](#formtouchonhoverdirective)
-    - [StopPropagation](#stoppropagationdirective)
-    - [DebounceChange](#debouncechangedirective)
+    - [ClickOutsideDirective](#clickoutsidedirective)
+    - [FormTouchOnHoverDirective](#formtouchonhoverdirective)
+    - [StopPropagationDirective](#stoppropagationdirective)
+    - [DebounceChangeDirective](#debouncechangedirective)
   - [Pipes](#pipes)
     - [EnumPipe](#enumpipe)
     - [SanitizePipe](#sanitizepipe)
     - [TimePassedPipe](#timepassedpipe)
+    - [ArrayFromObjectPipe](#arrayfromobjectpipe)
   - [Helper Classes](#helper-classes)
     - [RxDestroy](#rxdestroy)
 
@@ -164,6 +165,33 @@ Simplifies using of `DomSanitizer`. The pipe accepts any value and then tries to
 #### Input Value
 
 #### Parameters
+
+### ArrayFromObjectPipe
+
+This pipe takes an object as input and returns an array with `{key: string, value: any}`.
+
+#### Example
+
+```angular2html
+<div *ngFor="let item of someObject | jpArrayFromObject">
+  <span>KEY: {{item.key}}</span>
+  <span>VALUE: {{item.value}}</span>
+</div>
+```
+
+#### Use Cases
+
+- This pipe is useful when ever you need to iterate an object in your template 
+
+#### Input Value
+
+|value|type|description|
+|---|---|---|
+|value|object|any object  
+
+#### Parameters
+
+No parameters for `ArrayFromObjectPipe`
 
 ## Helper Classes
 
