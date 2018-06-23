@@ -33,3 +33,6 @@ export * from './pipes/sanitize/sanitize.pipe';
 
 export * from './pipes/time-passed/time-passed.module';
 export * from './pipes/time-passed/time-passed.pipe';
+
+export * from './pipes/array-from-object/array-from-object.module';
+export * from './pipes/array-from-object/array-from-object.pipe';
