@@ -158,13 +158,32 @@ Simplifies using of `DomSanitizer`. The pipe accepts any value and then tries to
 
 ### TimePassedPipe
 
+This pipe takes a date as input and returns the elapsed time since that date as a number in the desired format.
+
 #### Example
+
+```angular2html
+<div>
+ {{someDate | jpTimePassed:null:timePassedType.Minute}} minutes ago
+</div>
+```
 
 #### Use Cases
 
+- Displaying elapsed time
+
 #### Input Value
 
+|value|type|description|
+|---|---|---|
+|value|Date|any date|
+
 #### Parameters
+
+|param|type|default|description|
+|---|---|---|---|
+|dateTwo|Date|current date|This is the ending date in the interval. It defaults to the current date.|
+|type|TimePassedType|TimePassedType.Minute|In what time format should the elapsed time be returned in.|
 
 ### ArrayFromObjectPipe
 

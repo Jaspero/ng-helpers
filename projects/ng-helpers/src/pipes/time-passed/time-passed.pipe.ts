@@ -42,10 +42,15 @@ export class TimePassedPipe implements PipeTransform {
   }
 
   transform(dateOne: Date, dateTwo?: Date, type?: TimePassedType): any {
+
+    if (!dateTwo) {
+      dateTwo = new Date();
+    }
+
     return TimePassedPipe.timeDiff(
       dateOne,
       dateTwo,
-      type
+      type !== undefined ? type : TimePassedType.Minute
     );
   }
 
