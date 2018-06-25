@@ -66,13 +66,37 @@ if the event doesn't contain the target element.
 
 ### FormTouchOnHoverDirective
 
+This directive requires a `FormGroup` or `FormArray` then on mouseenter loops over all controls and marks them touched.
+
 #### Example
+
+```angular2html
+<form [formGroup]="someForm">
+  <input type="text" formControlName="someControl">
+  
+  <!--We wrapp the button so that we get mouseover event's even when the submit is disabled-->
+  <div jpFormTouchOnHover>
+    <button type="submit" [disabled]="someForm.invalid">Save</button>
+  </div>
+</form>
+```
 
 #### Use Cases
 
+- This directive is particularly useful when you want to provide information on why the submit button is disabled. 
+Since hovering over it will trigger any validation on the form. 
+
 #### Outputs
 
+|name|description|
+|---|---|
+|jpFormTouched|Emits when controls finish looping and every element was touched|
+
 #### Inputs
+
+|name|type|default|description|
+|---|---|---|---|
+|jpFormTouchOnHover|FormGroup or FormArray|null|set of controls to loop over|
 
 ### StopPropagationDirective
 

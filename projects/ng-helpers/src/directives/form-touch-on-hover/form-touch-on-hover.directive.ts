@@ -1,5 +1,5 @@
 import {Directive, EventEmitter, HostListener, Input, Output} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormGroup, FormArray} from '@angular/forms';
 
 @Directive({
   selector: '[jpFormTouchOnHover]'
@@ -9,7 +9,7 @@ export class FormTouchOnHoverDirective {
   /**
    * Entry FormGroup which to iterate over
    */
-  @Input() jpFormTouchOnHover: FormGroup;
+  @Input() jpFormTouchOnHover: FormGroup | FormArray;
 
   /**
    * Outputs when form finish iterating
@@ -21,7 +21,7 @@ export class FormTouchOnHoverDirective {
     this._markFormGroupTouched(this.jpFormTouchOnHover);
   }
 
-  private _markFormGroupTouched(formGroup: FormGroup) {
+  private _markFormGroupTouched(formGroup: (FormGroup | FormArray)) {
     (Object as any).values(formGroup.controls)
       .forEach(control => {
         control.markAsTouched();
@@ -39,6 +39,6 @@ export class FormTouchOnHoverDirective {
         }
       });
 
-    this.jpFormTouched.emit(1);
+    this.jpFormTouched.emit();
   }
 }
