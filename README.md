@@ -31,6 +31,8 @@ To install this library, run:
 $ npm install --save @jaspero/ng-helpers
 ```
 
+Then import any Module you need. For example if you need the `ClickOutsideDirective` import the `ClickOutsideModule`.
+
 ## Components
 
 ## Directives
