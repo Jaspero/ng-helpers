@@ -105,11 +105,26 @@ forwards it along and calls `event.stopPropagation()`.
 
 #### Example
 
+```angular2html
+  <button (jpStopPropagation)="doSomething()">Click</button>
+```
+
 #### Use Cases
+
+- When ever you need to stopPropagation on an event, you can use this directive rather then passing the event along
 
 #### Outputs
 
+|name|description|
+|---|---|
+|jpStopPropagation|Emits the original event after calling stopPropagation|
+
 #### Inputs
+
+|name|type|default|description|
+|---|---|---|---|
+|preventDefault|boolean|false|should `event.preventDefault()` also get called.|
+|stopPropagationEventType|string|'click'|what event to listen for|
 
 ### DebounceChangeDirective
 
@@ -118,11 +133,27 @@ forwards it along after `debounceTime`.
 
 #### Example
 
+```angular2html
+  <input type="text" (jpDebounceChange)="doSomething()" />
+```
+
 #### Use Cases
+
+- When ever you need to emit events with a delay
 
 #### Outputs
 
+|name|description|
+|---|---|
+|jpDebounceChange|emits original event after debounceTime|
+
 #### Inputs
+
+|name|type|default|description|
+|---|---|---|---|
+|debounceTime|number|500|value to pass to the `debounceTime` pipe|
+|debounceChangeEventType|string|'keyup'|what event to listen for|
+|emitOnlyOnChange|boolean|false|only emit event if the value changes|
 
 ## Pipes 
 
