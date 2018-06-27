@@ -6,6 +6,25 @@ import {FormGroup, FormArray} from '@angular/forms';
 })
 export class FormTouchOnHoverDirective {
 
+  static markFormGroupTouched(formGroup: (FormGroup | FormArray)) {
+    (Object as any).values(formGroup.controls)
+      .forEach(control => {
+        control.markAsTouched();
+
+        if (control && control.controls) {
+          if (Array.isArray(control.controls)) {
+            control.controls.forEach(c => FormTouchOnHoverDirective.markFormGroupTouched(c));
+          } else {
+            for (const key in control.controls) {
+              if (control.controls.hasOwnProperty(key)) {
+                control.controls[key].markAsTouched();
+              }
+            }
+          }
+        }
+      });
+  }
+
   /**
    * Entry FormGroup which to iterate over
    */
@@ -18,27 +37,7 @@ export class FormTouchOnHoverDirective {
 
   @HostListener('mouseenter')
   enter() {
-    this._markFormGroupTouched(this.jpFormTouchOnHover);
-  }
-
-  private _markFormGroupTouched(formGroup: (FormGroup | FormArray)) {
-    (Object as any).values(formGroup.controls)
-      .forEach(control => {
-        control.markAsTouched();
-
-        if (control && control.controls) {
-          if (Array.isArray(control.controls)) {
-            control.controls.forEach(c => this._markFormGroupTouched(c));
-          } else {
-            for (const key in control.controls) {
-              if (control.controls.hasOwnProperty(key)) {
-                control.controls[key].markAsTouched();
-              }
-            }
-          }
-        }
-      });
-
+    FormTouchOnHoverDirective.markFormGroupTouched(this.jpFormTouchOnHover);
     this.jpFormTouched.emit();
   }
 }
