@@ -1,16 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { NgForTrackByFieldDirective } from '../../projects/ng-helpers/src/directives/ng-for-track-by-field/ng-for-track-by-field.directive';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {TrackByFieldModule} from '../../projects/ng-helpers/src/directives/track-by-field/track-by-field.module';
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgForTrackByFieldDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    TrackByFieldModule.defaultKey()
   ],
   providers: [],
   bootstrap: [AppComponent]

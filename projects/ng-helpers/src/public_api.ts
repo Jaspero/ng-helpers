@@ -22,6 +22,9 @@ export * from './directives/form-touch-on-hover/form-touch-on-hover.directive';
 export * from './directives/debounce-change/debounce-change.module';
 export * from './directives/debounce-change/debounce-change.directive';
 
+export * from './directives/track-by-field/track-by-field.module';
+export * from './directives/track-by-field/track-by-field.directive';
+
 /**
  * Pipes
  */

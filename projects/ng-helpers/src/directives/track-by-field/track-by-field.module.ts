@@ -1,8 +1,6 @@
 import {CommonModule} from '@angular/common';
-import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {TrackByFieldDirective} from './track-by-field.directive';
-
-export const DEFAULT_KEY = new InjectionToken<string>('defaultKey');
 
 @NgModule({
   imports: [
@@ -13,16 +11,16 @@ export const DEFAULT_KEY = new InjectionToken<string>('defaultKey');
   ],
   exports: [
     TrackByFieldDirective
-  ]
+  ],
 })
 export class TrackByFieldModule {
-  static defaultKey(value: string): ModuleWithProviders {
+  static defaultKey(value = 'id'): ModuleWithProviders {
     return {
       ngModule: TrackByFieldModule,
       providers: [
         {
-          provide: DEFAULT_KEY,
-          useValue: value || 'id'
+          provide: 'defaultKey',
+          useValue: value
         }
       ]
     };

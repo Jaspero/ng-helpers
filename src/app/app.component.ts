@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  test = Array.from(Array(20).keys()).map(i => ({id: i, label: 'bla' + i}));
 }
