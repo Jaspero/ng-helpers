@@ -15,6 +15,7 @@ unnecessarily.
     - [FormTouchOnHoverDirective](#formtouchonhoverdirective)
     - [StopPropagationDirective](#stoppropagationdirective)
     - [DebounceChangeDirective](#debouncechangedirective)
+    - [TrackByField](#trackbyfield)
   - [Pipes](#pipes)
     - [EnumPipe](#enumpipe)
     - [SanitizePipe](#sanitizepipe)
@@ -156,6 +157,8 @@ forwards it along after `debounceTime`.
 |debounceTime|number|500|value to pass to the `debounceTime` pipe|
 |debounceChangeEventType|string|'keyup'|what event to listen for|
 |emitOnlyOnChange|boolean|false|only emit event if the value changes|
+
+### TrackByFieldDirective
 
 ## Pipes 
 
