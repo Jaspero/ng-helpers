@@ -28,16 +28,16 @@ export class FormTouchOnHoverDirective {
   /**
    * Entry FormGroup which to iterate over
    */
-  @Input() jpFormTouchOnHover: FormGroup | FormArray;
+  @Input() jpFormTouched: FormGroup | FormArray;
 
   /**
    * Outputs when form finish iterating
    */
-  @Output() jpFormTouched = new EventEmitter();
+  @Output() jpFormTouchOnHover = new EventEmitter();
 
   @HostListener('mouseenter')
   enter() {
-    FormTouchOnHoverDirective.markFormGroupTouched(this.jpFormTouchOnHover);
-    this.jpFormTouched.emit();
+    FormTouchOnHoverDirective.markFormGroupTouched(this.jpFormTouched);
+    this.jpFormTouchOnHover.emit();
   }
 }

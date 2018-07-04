@@ -93,13 +93,13 @@ Since hovering over it will trigger any validation on the form.
 
 |name|description|
 |---|---|
-|jpFormTouched|Emits when controls finish looping and every element was touched|
+|jpFormTouchOnHover|Emits when controls finish looping and every element was touched|
 
 #### Inputs
 
 |name|type|default|description|
 |---|---|---|---|
-|jpFormTouchOnHover|FormGroup or FormArray|null|set of controls to loop over|
+|jpFormTouched|FormGroup or FormArray|null|set of controls to loop over|
 
 ### StopPropagationDirective
 
