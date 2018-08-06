@@ -7,7 +7,7 @@ export class EnumKeyFormatPipe implements PipeTransform {
 
   static defaultFormat(value: string) {
     return value
-      .split(/(?=[A-Z])/)
+      .split(new RegExp('(?=[A-Z])'))
       .join(' ');
   }
 
