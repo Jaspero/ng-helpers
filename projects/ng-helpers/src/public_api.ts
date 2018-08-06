@@ -36,3 +36,6 @@ export * from './pipes/sanitize/sanitize.pipe';
 
 export * from './pipes/time-passed/time-passed.module';
 export * from './pipes/time-passed/time-passed.pipe';
+
+export * from './pipes/enum-key-format/enum-key-format.module';
+export * from './pipes/enum-key-format/enum-key-format.pipe';

@@ -20,7 +20,7 @@ unnecessarily.
     - [EnumPipe](#enumpipe)
     - [SanitizePipe](#sanitizepipe)
     - [TimePassedPipe](#timepassedpipe)
-    - [ArrayFromObjectPipe](#arrayfromobjectpipe)
+    - [EnumKeyFormatPipe](#enumkeyformatpipe)
   - [Helper Classes](#helper-classes)
     - [RxDestroy](#rxdestroy)
 
@@ -245,9 +245,9 @@ This pipe takes a date as input and returns the elapsed time since that date as 
 |dateTwo|Date|current date|This is the ending date in the interval. It defaults to the current date.|
 |type|TimePassedType|TimePassedType.Minute|In what time format should the elapsed time be returned in.|
 
-### ArrayFromObjectPipe
+### EnumKeyFormatPipe
 
-This pipe takes an object as input and returns an array with `{key: string, value: any}`.
+
 
 #### Example
 
