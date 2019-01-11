@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/Jaspero/ng-helpers.svg?branch=master)](https://travis-ci.org/Jaspero/ng-helpers)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![CircleCI](https://circleci.com/gh/Jaspero/ng-helpers/tree/master.svg?style=svg)](https://circleci.com/gh/Jaspero/ng-image/preload/tree/master)
 [![NPM Version](https://img.shields.io/npm/v/@jaspero/ng-helpers.svg)](https://www.npmjs.com/package/@jaspero/ng-helpers)
 
 # @jaspero/ng-helpers
@@ -6,23 +7,23 @@
 A collection of useful components, directives and pipes for Angular applications.
 
 Every item (component, directive and pipe) is published in a separate module, making it
-easy to just import modules your application will use and not increase bundle size 
+easy to just import modules your application will use and not increase bundle size
 unnecessarily.
 
-  - [Components](#components)
-  - [Directives](#directives)
-    - [ClickOutsideDirective](#clickoutsidedirective)
-    - [FormTouchOnHoverDirective](#formtouchonhoverdirective)
-    - [StopPropagationDirective](#stoppropagationdirective)
-    - [DebounceChangeDirective](#debouncechangedirective)
-    - [TrackByField](#trackbyfield)
-  - [Pipes](#pipes)
-    - [EnumPipe](#enumpipe)
-    - [SanitizePipe](#sanitizepipe)
-    - [TimePassedPipe](#timepassedpipe)
-    - [EnumKeyFormatPipe](#enumkeyformatpipe)
-  - [Helper Classes](#helper-classes)
-    - [RxDestroy](#rxdestroy)
+- [Components](#components)
+- [Directives](#directives)
+  - [ClickOutsideDirective](#clickoutsidedirective)
+  - [FormTouchOnHoverDirective](#formtouchonhoverdirective)
+  - [StopPropagationDirective](#stoppropagationdirective)
+  - [DebounceChangeDirective](#debouncechangedirective)
+  - [TrackByField](#trackbyfield)
+- [Pipes](#pipes)
+  - [EnumPipe](#enumpipe)
+  - [SanitizePipe](#sanitizepipe)
+  - [TimePassedPipe](#timepassedpipe)
+  - [EnumKeyFormatPipe](#enumkeyformatpipe)
+- [Helper Classes](#helper-classes)
+  - [RxDestroy](#rxdestroy)
 
 ## Installation
 
@@ -41,13 +42,13 @@ Then import any Module you need. For example if you need the `ClickOutsideDirect
 ### ClickOutsideDirective
 
 This directive listens for emitted events on the window object and emits
-if the event doesn't contain the target element. 
+if the event doesn't contain the target element.
 
 #### Example
 
 ```angular2html
 <div (jpClickOutside)="doSomething()"></div>
-``` 
+```
 
 #### Use Cases
 
@@ -56,16 +57,16 @@ if the event doesn't contain the target element.
 
 #### Outputs
 
-|name|description|
-|---|---|
-|jpClickOutside|Emits when current element isn't contained in the event|
+| name           | description                                             |
+| -------------- | ------------------------------------------------------- |
+| jpClickOutside | Emits when current element isn't contained in the event |
 
 #### Inputs
 
-|name|type|default|description|
-|---|---|---|---|
-|clickOutsideEventType|string|'click'|event to listen for|
-|clickOutsideBlock|boolean|false|if true `jpClickOutside` doesn't emit|
+| name                  | type    | default | description                           |
+| --------------------- | ------- | ------- | ------------------------------------- |
+| clickOutsideEventType | string  | 'click' | event to listen for                   |
+| clickOutsideBlock     | boolean | false   | if true `jpClickOutside` doesn't emit |
 
 ### FormTouchOnHoverDirective
 
@@ -76,7 +77,7 @@ This directive requires a `FormGroup` or `FormArray` then on mouseenter loops ov
 ```angular2html
 <form [formGroup]="someForm">
   <input type="text" formControlName="someControl">
-  
+
   <!--We wrapp the button so that we get mouseover event's even when the submit is disabled-->
   <div jpFormTouchOnHover>
     <button type="submit" [disabled]="someForm.invalid">Save</button>
@@ -86,24 +87,24 @@ This directive requires a `FormGroup` or `FormArray` then on mouseenter loops ov
 
 #### Use Cases
 
-- This directive is particularly useful when you want to provide information on why the submit button is disabled. 
-Since hovering over it will trigger any validation on the form. 
+- This directive is particularly useful when you want to provide information on why the submit button is disabled.
+  Since hovering over it will trigger any validation on the form.
 
 #### Outputs
 
-|name|description|
-|---|---|
-|jpFormTouchOnHover|Emits when controls finish looping and every element was touched|
+| name               | description                                                      |
+| ------------------ | ---------------------------------------------------------------- |
+| jpFormTouchOnHover | Emits when controls finish looping and every element was touched |
 
 #### Inputs
 
-|name|type|default|description|
-|---|---|---|---|
-|jpFormTouched|FormGroup or FormArray|null|set of controls to loop over|
+| name          | type                   | default | description                  |
+| ------------- | ---------------------- | ------- | ---------------------------- |
+| jpFormTouched | FormGroup or FormArray | null    | set of controls to loop over |
 
 ### StopPropagationDirective
 
-Listens for the emitted event on the target element and simply 
+Listens for the emitted event on the target element and simply
 forwards it along and calls `event.stopPropagation()`.
 
 #### Example
@@ -118,16 +119,16 @@ forwards it along and calls `event.stopPropagation()`.
 
 #### Outputs
 
-|name|description|
-|---|---|
-|jpStopPropagation|Emits the original event after calling stopPropagation|
+| name              | description                                            |
+| ----------------- | ------------------------------------------------------ |
+| jpStopPropagation | Emits the original event after calling stopPropagation |
 
 #### Inputs
 
-|name|type|default|description|
-|---|---|---|---|
-|preventDefault|boolean|false|should `event.preventDefault()` also get called.|
-|stopPropagationEventType|string|'click'|what event to listen for|
+| name                     | type    | default | description                                      |
+| ------------------------ | ------- | ------- | ------------------------------------------------ |
+| preventDefault           | boolean | false   | should `event.preventDefault()` also get called. |
+| stopPropagationEventType | string  | 'click' | what event to listen for                         |
 
 ### DebounceChangeDirective
 
@@ -146,21 +147,21 @@ forwards it along after `debounceTime`.
 
 #### Outputs
 
-|name|description|
-|---|---|
-|jpDebounceChange|emits original event after debounceTime|
+| name             | description                             |
+| ---------------- | --------------------------------------- |
+| jpDebounceChange | emits original event after debounceTime |
 
 #### Inputs
 
-|name|type|default|description|
-|---|---|---|---|
-|debounceTime|number|500|value to pass to the `debounceTime` pipe|
-|debounceChangeEventType|string|'keyup'|what event to listen for|
-|emitOnlyOnChange|boolean|false|only emit event if the value changes|
+| name                    | type    | default | description                              |
+| ----------------------- | ------- | ------- | ---------------------------------------- |
+| debounceTime            | number  | 500     | value to pass to the `debounceTime` pipe |
+| debounceChangeEventType | string  | 'keyup' | what event to listen for                 |
+| emitOnlyOnChange        | boolean | false   | only emit event if the value changes     |
 
 ### TrackByFieldDirective
 
-## Pipes 
+## Pipes
 
 ### EnumPipe
 
@@ -182,9 +183,9 @@ A very simple pipe that returns an array of `{key: number, value: string}` objec
 
 #### Input Value
 
-|value|type|description|
-|---|---|---|
-|value|enum|Supports any enum value. Provide it in typescript `someEnum = SomeEnum` to iterate over in html. 
+| value | type | description                                                                                      |
+| ----- | ---- | ------------------------------------------------------------------------------------------------ |
+| value | enum | Supports any enum value. Provide it in typescript `someEnum = SomeEnum` to iterate over in html. |
 
 #### Parameters
 
@@ -206,15 +207,15 @@ Simplifies using of `DomSanitizer`. The pipe accepts any value and then tries to
 
 #### Input Value
 
-|value|type|description|
-|---|---|---|
-|value|string|Accepts any unsanitized string and runs it through `DomSanitizer`  
+| value | type   | description                                                       |
+| ----- | ------ | ----------------------------------------------------------------- |
+| value | string | Accepts any unsanitized string and runs it through `DomSanitizer` |
 
 #### Parameters
 
-|param|type|default|description|
-|---|---|---|---|
-|type|html or style or script or url or resourceUrl|html|Type of entry value. This determines what `DomSanitizer` method get's used|
+| param | type                                          | default | description                                                                |
+| ----- | --------------------------------------------- | ------- | -------------------------------------------------------------------------- |
+| type  | html or style or script or url or resourceUrl | html    | Type of entry value. This determines what `DomSanitizer` method get's used |
 
 ### TimePassedPipe
 
@@ -234,20 +235,18 @@ This pipe takes a date as input and returns the elapsed time since that date as 
 
 #### Input Value
 
-|value|type|description|
-|---|---|---|
-|value|Date|any date|
+| value | type | description |
+| ----- | ---- | ----------- |
+| value | Date | any date    |
 
 #### Parameters
 
-|param|type|default|description|
-|---|---|---|---|
-|dateTwo|Date|current date|This is the ending date in the interval. It defaults to the current date.|
-|type|TimePassedType|TimePassedType.Minute|In what time format should the elapsed time be returned in.|
+| param   | type           | default               | description                                                               |
+| ------- | -------------- | --------------------- | ------------------------------------------------------------------------- |
+| dateTwo | Date           | current date          | This is the ending date in the interval. It defaults to the current date. |
+| type    | TimePassedType | TimePassedType.Minute | In what time format should the elapsed time be returned in.               |
 
 ### EnumKeyFormatPipe
-
-
 
 #### Example
 
@@ -260,13 +259,13 @@ This pipe takes a date as input and returns the elapsed time since that date as 
 
 #### Use Cases
 
-- This pipe is useful when ever you need to iterate an object in your template 
+- This pipe is useful when ever you need to iterate an object in your template
 
 #### Input Value
 
-|value|type|description|
-|---|---|---|
-|value|object|any object  
+| value | type   | description |
+| ----- | ------ | ----------- |
+| value | object | any object  |
 
 #### Parameters
 
@@ -278,16 +277,14 @@ No parameters for `ArrayFromObjectPipe`
 
 A dead simple helper class that's intended to extend components.
 It uses the `OnDestroy` angular life cycle hook, it calls `next()` and
-`complete()` on `destroyed$` Subject. 
+`complete()` on `destroyed$` Subject.
 
 This means that instead of calling `unsubscribe()` on all your observables
 in the `OnDestroy` hook, you can simply do this:
 
 ```ts
 interval(1000)
-  .pipe(
-    takeUntil(this.destroyed$)
-  )
+  .pipe(takeUntil(this.destroyed$))
   .subscribe(_ => {});
 ```
 
