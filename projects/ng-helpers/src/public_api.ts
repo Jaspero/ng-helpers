@@ -6,6 +6,7 @@
  * Helpers
  */
 export * from './helpers/rx-destroy';
+export * from './helpers/on-change';
 
 /**
  * Directives

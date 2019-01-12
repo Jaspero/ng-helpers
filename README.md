@@ -24,6 +24,7 @@ unnecessarily.
   - [EnumKeyFormatPipe](#enumkeyformatpipe)
 - [Helper Classes](#helper-classes)
   - [RxDestroy](#rxdestroy)
+  - [OnChange](#onchange)
 
 ## Installation
 
@@ -287,6 +288,11 @@ interval(1000)
   .pipe(takeUntil(this.destroyed$))
   .subscribe(_ => {});
 ```
+
+### OnChange
+
+A decorator for change detection on properties
+https://blog.angularindepth.com/creatively-decouple-ngonchanges-fab95395cc6e
 
 ## License
 

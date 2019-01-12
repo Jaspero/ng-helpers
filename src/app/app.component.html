@@ -1,1 +1,7 @@
 <div *ngFor="let i of test; jpTrackByField:'pero'">{{i.id}}</div>
+
+<jp-on-changes [value]="onChangeValue"></jp-on-changes>
+
+<button (click)="changeOnChangeValue()">
+  Change value
+</button>
