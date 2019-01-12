@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Jaspero/ng-helpers/compare/v1.0.0...v1.1.0) (2019-01-12)
+
+
+### Features
+
+* Added [@on](https://github.com/on)Change closes [#2](https://github.com/Jaspero/ng-helpers/issues/2) ([dae4c04](https://github.com/Jaspero/ng-helpers/commit/dae4c04))
+
 # 1.0.0 (2019-01-12)
 
 
