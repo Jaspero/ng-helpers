@@ -1,4 +1,10 @@
-import {Directive, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output
+} from '@angular/core';
 import {FormGroup, FormArray} from '@angular/forms';
 
 type entry = FormGroup | FormArray;
@@ -7,24 +13,24 @@ type entry = FormGroup | FormArray;
   selector: '[jpFormTouchOnHover]'
 })
 export class FormTouchOnHoverDirective {
+  static markFormGroupTouched(formGroup: FormGroup | FormArray) {
+    (Object as any).values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
 
-  static markFormGroupTouched(formGroup: (FormGroup | FormArray)) {
-    (Object as any).values(formGroup.controls)
-      .forEach(control => {
-        control.markAsTouched();
-
-        if (control && control.controls) {
-          if (Array.isArray(control.controls)) {
-            control.controls.forEach(c => FormTouchOnHoverDirective.markFormGroupTouched(c));
-          } else {
-            for (const key in control.controls) {
-              if (control.controls.hasOwnProperty(key)) {
-                control.controls[key].markAsTouched();
-              }
+      if (control && control.controls) {
+        if (Array.isArray(control.controls)) {
+          control.controls.forEach(c =>
+            FormTouchOnHoverDirective.markFormGroupTouched(c)
+          );
+        } else {
+          for (const key in control.controls) {
+            if (control.controls.hasOwnProperty(key)) {
+              control.controls[key].markAsTouched();
             }
           }
         }
-      });
+      }
+    });
   }
 
   /**
@@ -40,7 +46,9 @@ export class FormTouchOnHoverDirective {
   @HostListener('mouseenter')
   enter() {
     if (Array.isArray(this.jpFormTouchOnHover)) {
-      this.jpFormTouchOnHover.forEach(form => FormTouchOnHoverDirective.markFormGroupTouched(form))
+      this.jpFormTouchOnHover.forEach(form =>
+        FormTouchOnHoverDirective.markFormGroupTouched(form)
+      );
     } else {
       FormTouchOnHoverDirective.markFormGroupTouched(this.jpFormTouchOnHover);
     }
