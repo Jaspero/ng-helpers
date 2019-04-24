@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Jaspero/ng-helpers/compare/v1.1.0...v1.2.0) (2019-03-29)
+
+
+### Features
+
+* added support for array of forms ([6c1fe3b](https://github.com/Jaspero/ng-helpers/commit/6c1fe3b))
+
 # [1.1.0](https://github.com/Jaspero/ng-helpers/compare/v1.0.0...v1.1.0) (2019-01-12)
 
 
