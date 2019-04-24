@@ -1,6 +1,7 @@
 import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/core';
 import {Observable} from 'rxjs';
-import {finalize} from 'rxjs/operators';
+import {finalize, takeUntil} from 'rxjs/operators';
+import {RxDestroy} from '../../helpers/rx-destroy';
 
 /**
  * Directive will add loading class to the host element when click event is triggered
@@ -9,11 +10,12 @@ import {finalize} from 'rxjs/operators';
  */
 
 @Directive({selector: '[jpLoadClick]'})
-export class LoadClickDirective {
+export class LoadClickDirective extends RxDestroy {
   constructor(
     private _el: ElementRef,
     private _renderer: Renderer2
   ) {
+    super();
   }
 
   @Input()
@@ -32,7 +34,8 @@ export class LoadClickDirective {
 
     this.loadClick
       .pipe(
-        finalize(() => this._renderer.removeClass(this._el.nativeElement, 'loading'))
+        finalize(() => this._renderer.removeClass(this._el.nativeElement, 'loading')),
+        takeUntil(this.destroyed$)
       )
       .subscribe();
   }
