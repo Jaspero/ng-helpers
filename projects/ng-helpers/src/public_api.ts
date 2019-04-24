@@ -26,6 +26,9 @@ export * from './directives/debounce-change/debounce-change.directive';
 export * from './directives/track-by-field/track-by-field.module';
 export * from './directives/track-by-field/track-by-field.directive';
 
+export * from './directives/load-click/load-click.module';
+export * from './directives/load-click/load-click.directive';
+
 /**
  * Pipes
  */
