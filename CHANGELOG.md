@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Jaspero/ng-helpers/compare/v1.2.0...v1.3.0) (2019-04-24)
+
+
+### Features
+
+* added load click directive :zap: ([c4bd719](https://github.com/Jaspero/ng-helpers/commit/c4bd719))
+
 # [1.2.0](https://github.com/Jaspero/ng-helpers/compare/v1.1.0...v1.2.0) (2019-03-29)
 
 
