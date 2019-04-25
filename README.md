@@ -17,6 +17,7 @@ unnecessarily.
   - [StopPropagationDirective](#stoppropagationdirective)
   - [DebounceChangeDirective](#debouncechangedirective)
   - [TrackByField](#trackbyfield)
+  - [LoadClickDirective](#loadclick)
 - [Pipes](#pipes)
   - [EnumPipe](#enumpipe)
   - [SanitizePipe](#sanitizepipe)
@@ -161,6 +162,28 @@ forwards it along after `debounceTime`.
 | emitOnlyOnChange        | boolean | false   | only emit event if the value changes     |
 
 ### TrackByFieldDirective
+
+### LoadClickDirective
+
+Listens for the emitted click event on the target element and add loading class.
+
+#### Example
+
+```angular2html
+  <button [jpLoadClick]="save()">Submit</button>
+```
+
+#### Use Cases
+
+- For preventing double click on the submit button.
+
+#### Inputs
+
+| name                     | type            | default   | description                              |
+| ------------------------ | --------------- | --------- | ---------------------------------------- |
+| jpLoadClick              | Observable<any> |  false    |  |
+| loadClickClass           | string          | 'loading' |  |
+| loadClickStopPropagation | boolean         | false     |  |
 
 ## Pipes
 
