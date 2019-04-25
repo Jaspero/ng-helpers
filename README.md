@@ -17,7 +17,7 @@ unnecessarily.
   - [StopPropagationDirective](#stoppropagationdirective)
   - [DebounceChangeDirective](#debouncechangedirective)
   - [TrackByField](#trackbyfield)
-  - [LoadClickDirective](#loadclick)
+  - [LoadClickDirective](#loadclickdirective)
 - [Pipes](#pipes)
   - [EnumPipe](#enumpipe)
   - [SanitizePipe](#sanitizepipe)
