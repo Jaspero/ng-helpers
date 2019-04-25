@@ -4,8 +4,8 @@ import {finalize, takeUntil} from 'rxjs/operators';
 import {RxDestroy} from '../../helpers/rx-destroy';
 
 /**
- * Directive will add loading class to the host element when click event is triggered
- * Usage: [loadClick]="save()"
+ * Directive will add loading class to the host element on click event
+ * Usage: [jpLoadClick]="save()"
  * Function save() should return observable
  */
 
@@ -19,10 +19,13 @@ export class LoadClickDirective extends RxDestroy {
   }
 
   @Input()
-  loadClick: Observable<any>;
+  jpLoadClick: Observable<any>;
 
   @Input()
   loadClickStopPropagation = false;
+
+  @Input()
+  loadClickClass = 'loading';
 
   @HostListener('click', ['$event'])
   click(event) {
@@ -30,9 +33,9 @@ export class LoadClickDirective extends RxDestroy {
       event.stopPropagation();
     }
 
-    this._renderer.addClass(this._el.nativeElement, 'loading');
+    this._renderer.addClass(this._el.nativeElement, this.loadClickClass);
 
-    this.loadClick
+    this.jpLoadClick
       .pipe(
         finalize(() => this._renderer.removeClass(this._el.nativeElement, 'loading')),
         takeUntil(this.destroyed$)
