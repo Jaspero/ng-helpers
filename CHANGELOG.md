@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Jaspero/ng-helpers/compare/v1.3.0...v1.3.1) (2019-04-25)
+
+
+### Bug Fixes
+
+* **LoadClick:** directive name is same as input && added input loadingClickClass ([089882c](https://github.com/Jaspero/ng-helpers/commit/089882c))
+
 # [1.3.0](https://github.com/Jaspero/ng-helpers/compare/v1.2.0...v1.3.0) (2019-04-24)
 
 
