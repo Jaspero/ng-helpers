@@ -1,8 +1,10 @@
-version: 2.1
+version: 2
 
 job_defaults: &job_defaults
   docker:
     - image: circleci/node:latest
+  environment:
+    NPM_VERSION: "6.9.0"
   working_directory: ~/project/repo
 
 cache_key: &cache_key ng-helpers-deps-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
