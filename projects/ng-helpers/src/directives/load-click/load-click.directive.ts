@@ -1,5 +1,5 @@
 import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/core';
-import {Observable} from 'rxjs';
+import {defer, Observable} from 'rxjs';
 import {finalize, takeUntil} from 'rxjs/operators';
 import {RxDestroy} from '../../helpers/rx-destroy';
 
@@ -35,7 +35,7 @@ export class LoadClickDirective extends RxDestroy {
 
     this._renderer.addClass(this._el.nativeElement, this.loadClickClass);
 
-    this.jpLoadClick
+    defer(() => this.jpLoadClick)
       .pipe(
         finalize(() => this._renderer.removeClass(this._el.nativeElement, 'loading')),
         takeUntil(this.destroyed$)
