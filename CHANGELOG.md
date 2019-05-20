@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/Jaspero/ng-helpers/compare/v1.3.2...v2.0.0) (2019-05-20)
+
+
+### chore
+
+* **LoadClick:** jpLoadClick expecting () => Observable ([cf5bf3c](https://github.com/Jaspero/ng-helpers/commit/cf5bf3c))
+
+
+### BREAKING CHANGES
+
+* **LoadClick:** jpLoadClick now expecting () => Observable<any> instead of Observable<any>
+
 ## [1.3.2](https://github.com/Jaspero/ng-helpers/compare/v1.3.1...v1.3.2) (2019-05-20)
 
 
