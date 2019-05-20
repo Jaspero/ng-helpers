@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/Jaspero/ng-helpers/compare/v1.3.1...v1.3.2) (2019-05-20)
+
+
+### Bug Fixes
+
+* lock file ([d2b5b6c](https://github.com/Jaspero/ng-helpers/commit/d2b5b6c))
+* **LoadClick:** build :bug: ([8b03848](https://github.com/Jaspero/ng-helpers/commit/8b03848))
+
 ## [1.3.1](https://github.com/Jaspero/ng-helpers/compare/v1.3.0...v1.3.1) (2019-04-25)
 
 
