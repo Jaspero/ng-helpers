@@ -22,12 +22,14 @@ export * from './directives/form-touch-on-hover/form-touch-on-hover.directive';
 
 export * from './directives/debounce-change/debounce-change.module';
 export * from './directives/debounce-change/debounce-change.directive';
+export * from './directives/debounce-change/debounce-time.const';
 
 export * from './directives/track-by-field/track-by-field.module';
 export * from './directives/track-by-field/track-by-field.directive';
 
 export * from './directives/load-click/load-click.module';
 export * from './directives/load-click/load-click.directive';
+export * from './directives/load-click/load-click-class.const';
 
 /**
  * Pipes

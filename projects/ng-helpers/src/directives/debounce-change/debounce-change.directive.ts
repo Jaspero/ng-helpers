@@ -1,7 +1,8 @@
-import {AfterViewInit, Directive, ElementRef, EventEmitter, Input, NgZone, Output} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, EventEmitter, Inject, Input, NgZone, Output} from '@angular/core';
 import {fromEvent} from 'rxjs';
 import {debounceTime, filter, takeUntil} from 'rxjs/operators';
 import {RxDestroy} from '../../helpers/rx-destroy';
+import {DEBOUNCE_TIME} from './debounce-time.const';
 
 @Directive({
   selector: '[jpDebounceChange]'
@@ -9,7 +10,8 @@ import {RxDestroy} from '../../helpers/rx-destroy';
 export class DebounceChangeDirective extends RxDestroy implements AfterViewInit {
   constructor(
     private _el: ElementRef,
-    private _ngZone: NgZone
+    private _ngZone: NgZone,
+    @Inject(DEBOUNCE_TIME) private _defaultDebounceTime: number
   ) {
     super();
   }
@@ -17,7 +19,7 @@ export class DebounceChangeDirective extends RxDestroy implements AfterViewInit 
   /**
    * time to forward to the debounceTime pipe
    */
-  @Input() debounceTime = 500;
+  @Input() debounceTime;
 
   /**
    * Any valid html event
@@ -43,7 +45,7 @@ export class DebounceChangeDirective extends RxDestroy implements AfterViewInit 
       fromEvent<any>(this._el.nativeElement, this.debounceChangeEventType)
         .pipe(
           takeUntil(this.destroyed$),
-          debounceTime(this.debounceTime),
+          debounceTime(this.debounceTime || this._defaultDebounceTime),
           filter(event => {
             return event.target &&
               event.target.value !== undefined &&

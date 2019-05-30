@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {LoadClickDirective} from './load-click.directive';
-import {LOAD_CLICK_CLASS} from './load-click.const';
+import {LOAD_CLICK_CLASS} from './load-click-class.const';
 
 @NgModule({
   imports: [

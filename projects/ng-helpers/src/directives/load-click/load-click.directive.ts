@@ -8,7 +8,7 @@ import {
 import {Observable} from 'rxjs';
 import {finalize, takeUntil} from 'rxjs/operators';
 import {RxDestroy} from '../../helpers/rx-destroy';
-import {LOAD_CLICK_CLASS} from './load-click.const';
+import {LOAD_CLICK_CLASS} from './load-click-class.const';
 
 /**
  * Directive will add loading class to the host element on click event
