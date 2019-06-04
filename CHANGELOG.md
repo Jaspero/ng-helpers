@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/Jaspero/ng-helpers/compare/v2.0.1...v3.0.0) (2019-06-04)
+
+
+### Features
+
+* **FormTouchOnHover:** FormTouchOnHoverDirective simplification closes [#3](https://github.com/Jaspero/ng-helpers/issues/3) ([4ba81bc](https://github.com/Jaspero/ng-helpers/commit/4ba81bc))
+
+
+### BREAKING CHANGES
+
+* **FormTouchOnHover:** bump angular to v8
+
 ## [2.0.1](https://github.com/Jaspero/ng-helpers/compare/v2.0.0...v2.0.1) (2019-05-21)
 
 
