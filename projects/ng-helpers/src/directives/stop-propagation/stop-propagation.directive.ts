@@ -31,6 +31,8 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
    */
   @Input() preventDefault = false;
 
+  @Input() condition: boolean | (() => boolean);
+
   /**
    * Outputs the input event
    */
@@ -47,8 +49,17 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
           event.preventDefault();
         }
 
-        event.stopPropagation();
-        this.jpStopPropagation.emit(event);
+        if (this.condition !== undefined) {
+          if (typeof this.condition === 'boolean') {
+            if (this.condition) {
+              this.sp(event);
+            }
+          } else if (this.condition()) {
+            this.sp(event);
+          }
+        } else {
+          this.sp(event);
+        }
       }
     );
   }
@@ -57,5 +68,10 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
     try {
       this._eventListener.unsubscribe();
     } catch (e) {}
+  }
+
+  private sp(event) {
+    event.stopPropagation();
+    this.jpStopPropagation.emit(event);
   }
 }
