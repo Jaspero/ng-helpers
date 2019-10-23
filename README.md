@@ -131,7 +131,7 @@ forwards it along and calls `event.stopPropagation()`.
 | ------------------------ | ------- | ------- | ------------------------------------------------ |
 | preventDefault           | boolean | false   | should `event.preventDefault()` also get called. |
 | stopPropagationEventType | string  | 'click' | what event to listen for                         |
-| condition | boolean or string | undefined | a condition to check before calling `event.stopPropagation()` |
+| condition | boolean or (event) => boolean | undefined | a condition to check before calling `event.stopPropagation()` |
 
 ### DebounceChangeDirective
 

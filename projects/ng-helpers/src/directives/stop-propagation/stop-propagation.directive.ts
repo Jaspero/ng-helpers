@@ -31,7 +31,7 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
    */
   @Input() preventDefault = false;
 
-  @Input() condition: boolean | (() => boolean);
+  @Input() condition: boolean | ((event: MouseEvent) => boolean);
 
   /**
    * Outputs the input event
@@ -54,7 +54,7 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
             if (this.condition) {
               this.sp(event);
             }
-          } else if (this.condition()) {
+          } else if (this.condition(event)) {
             this.sp(event);
           }
         } else {
