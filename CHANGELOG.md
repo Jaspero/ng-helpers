@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/Jaspero/ng-helpers/compare/v3.1.0...v3.2.0) (2019-10-23)
+
+
+### Features
+
+* **StopPropagation:** forwarding event in condition ([3f19f3a](https://github.com/Jaspero/ng-helpers/commit/3f19f3a))
+
 # [3.1.0](https://github.com/Jaspero/ng-helpers/compare/v3.0.0...v3.1.0) (2019-10-23)
 
 
