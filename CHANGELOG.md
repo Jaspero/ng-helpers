@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/Jaspero/ng-helpers/compare/v3.0.0...v3.1.0) (2019-10-23)
+
+
+### Features
+
+* **StopPropagation:** Added condition @Input ([e86e999](https://github.com/Jaspero/ng-helpers/commit/e86e999))
+
 # [3.0.0](https://github.com/Jaspero/ng-helpers/compare/v2.0.1...v3.0.0) (2019-06-04)
 
 
