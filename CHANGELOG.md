@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/Jaspero/ng-helpers/compare/v3.2.0...v3.3.0) (2020-01-30)
+
+
+### Features
+
+* **LoadClick:** added loadClickEventType & loadClickPreventDefault :zap: ([a25be92](https://github.com/Jaspero/ng-helpers/commit/a25be92))
+
 # [3.2.0](https://github.com/Jaspero/ng-helpers/compare/v3.1.0...v3.2.0) (2019-10-23)
 
 
