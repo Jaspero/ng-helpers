@@ -1,10 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  HostListener, Inject,
-  Input,
-  Renderer2
-} from '@angular/core';
+import {Directive, ElementRef, Inject, Input, OnInit, Renderer2} from '@angular/core';
 import {Observable} from 'rxjs';
 import {finalize, takeUntil} from 'rxjs/operators';
 import {RxDestroy} from '../../helpers/rx-destroy';
@@ -17,7 +11,7 @@ import {LOAD_CLICK_CLASS} from './load-click-class.const';
  */
 
 @Directive({selector: '[jpLoadClick]'})
-export class LoadClickDirective extends RxDestroy {
+export class LoadClickDirective extends RxDestroy implements OnInit {
   constructor(
     private _el: ElementRef,
     private _renderer: Renderer2,
@@ -30,28 +24,43 @@ export class LoadClickDirective extends RxDestroy {
   jpLoadClick: () => Observable<any>;
 
   @Input()
+  loadClickEventType = 'click';
+
+  @Input()
   loadClickStopPropagation = false;
+
+  @Input()
+  loadClickPreventDefault = false;
 
   @Input()
   loadClickClass: string;
 
-  @HostListener('click', ['$event'])
-  click(event) {
-    const defaultClass = this.loadClickClass || this._defaultLoadClickClass;
+  ngOnInit() {
+    this._renderer.listen(
+      this._el.nativeElement,
+      this.loadClickEventType,
+      event => {
+        const defaultClass = this.loadClickClass || this._defaultLoadClickClass;
 
-    if (this.loadClickStopPropagation) {
-      event.stopPropagation();
-    }
+        if (this.loadClickStopPropagation) {
+          event.stopPropagation();
+        }
 
-    this._renderer.addClass(this._el.nativeElement, defaultClass);
+        if (this.loadClickPreventDefault) {
+          event.preventDefault();
+        }
 
-    this.jpLoadClick()
-      .pipe(
-        finalize(() =>
-          this._renderer.removeClass(this._el.nativeElement, defaultClass)
-        ),
-        takeUntil(this.destroyed$)
-      )
-      .subscribe();
+        this._renderer.addClass(this._el.nativeElement, defaultClass);
+
+        this.jpLoadClick()
+          .pipe(
+            finalize(() =>
+              this._renderer.removeClass(this._el.nativeElement, defaultClass)
+            ),
+            takeUntil(this.destroyed$)
+          )
+          .subscribe();
+      }
+    );
   }
 }

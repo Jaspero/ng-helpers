@@ -1,13 +1,4 @@
-import {
-  Directive,
-  Output,
-  EventEmitter,
-  Renderer2,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  Input
-} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2} from '@angular/core';
 
 /**
  * Used for preventing propagation on event calls event.stopPropagation())
@@ -18,7 +9,7 @@ import {
 @Directive({
   selector: '[jpStopPropagation]'
 })
-export class StopPropagationDirective implements OnInit, OnDestroy {
+export class StopPropagationDirective implements OnInit {
   constructor(private _renderer: Renderer2, private _el: ElementRef) {}
 
   /**
@@ -38,10 +29,8 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
    */
   @Output() jpStopPropagation = new EventEmitter();
 
-  private _eventListener: any;
-
   ngOnInit() {
-    this._eventListener = this._renderer.listen(
+    this._renderer.listen(
       this._el.nativeElement,
       this.stopPropagationEventType,
       event => {
@@ -62,12 +51,6 @@ export class StopPropagationDirective implements OnInit, OnDestroy {
         }
       }
     );
-  }
-
-  ngOnDestroy() {
-    try {
-      this._eventListener.unsubscribe();
-    } catch (e) {}
   }
 
   private sp(event) {

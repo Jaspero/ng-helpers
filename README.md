@@ -182,9 +182,11 @@ Listens for the emitted click event on the target element and add loading class.
 
 | name                     | type            | default   | description                              |
 | ------------------------ | --------------- | --------- | ---------------------------------------- |
-| jpLoadClick              | Observable<any> |  false    |  |
-| loadClickClass           | string          | 'loading' |  |
-| loadClickStopPropagation | boolean         | false     |  |
+| jpLoadClick              | Observable<any> |  false    |  
+| loadClickClass           | string          | 'loading' |  
+| loadClickStopPropagation | boolean         | false     |  
+| loadClickEventType       | string          | 'click'   |  
+| loadClickPreventDefault  | boolean         | false     |  
 
 ## Pipes
 
