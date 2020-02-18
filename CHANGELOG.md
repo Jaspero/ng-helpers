@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/Jaspero/ng-helpers/compare/v3.3.0...v3.4.0) (2020-02-18)
+
+
+### Features
+
+* **load-click:** added disabled [@input](https://github.com/input) :zap: ([49f5b6f](https://github.com/Jaspero/ng-helpers/commit/49f5b6f))
+
 # [3.3.0](https://github.com/Jaspero/ng-helpers/compare/v3.2.0...v3.3.0) (2020-01-30)
 
 
