@@ -182,11 +182,12 @@ Listens for the emitted click event on the target element and add loading class.
 
 | name                     | type            | default   | description                              |
 | ------------------------ | --------------- | --------- | ---------------------------------------- |
-| jpLoadClick              | Observable<any> |  false    |  
+| jpLoadClick              | Observable<any> | null      |  
 | loadClickClass           | string          | 'loading' |  
-| loadClickStopPropagation | boolean         | false     |  
-| loadClickEventType       | string          | 'click'   |  
-| loadClickPreventDefault  | boolean         | false     |  
+| loadClickStopPropagation | boolean         | false     | Should `stopPropagation` be called. 
+| loadClickEventType       | string          | 'click'   | 
+| loadClickPreventDefault  | boolean         | false     | Should `preventDefault` be called. 
+| disableAttribute         | boolean         | true      | Should the disabled attribute be attached to the element. 
 
 ## Pipes
 

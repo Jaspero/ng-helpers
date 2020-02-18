@@ -35,6 +35,9 @@ export class LoadClickDirective extends RxDestroy implements OnInit {
   @Input()
   loadClickClass: string;
 
+  @Input()
+  disableAttribute = true;
+
   ngOnInit() {
     this._renderer.listen(
       this._el.nativeElement,
@@ -52,11 +55,23 @@ export class LoadClickDirective extends RxDestroy implements OnInit {
 
         this._renderer.addClass(this._el.nativeElement, defaultClass);
 
+        if (this.disableAttribute) {
+          this._renderer.setAttribute(
+            this._el.nativeElement,
+            'disabled',
+            ''
+          );
+        }
+
         this.jpLoadClick()
           .pipe(
-            finalize(() =>
-              this._renderer.removeClass(this._el.nativeElement, defaultClass)
-            ),
+            finalize(() => {
+              this._renderer.removeClass(this._el.nativeElement, defaultClass);
+
+              if (this.disableAttribute) {
+                this._renderer.removeAttribute(this._el.nativeElement, 'disabled');
+              }
+            }),
             takeUntil(this.destroyed$)
           )
           .subscribe();
