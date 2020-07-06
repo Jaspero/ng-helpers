@@ -21,7 +21,7 @@ import {LOAD_CLICK_CLASS} from './load-click-class.const';
   ]
 })
 export class LoadClickModule {
-  static defaultLoadingClass(value: string): ModuleWithProviders {
+  static defaultLoadingClass(value: string): ModuleWithProviders<LoadClickModule> {
     return {
       ngModule: LoadClickModule,
       providers: [

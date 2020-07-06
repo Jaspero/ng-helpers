@@ -21,7 +21,7 @@ import {DEBOUNCE_TIME} from './debounce-time.const';
   ]
 })
 export class DebounceChangeModule {
-  static defaultDebounceTime(value: number): ModuleWithProviders {
+  static defaultDebounceTime(value: number): ModuleWithProviders<DebounceChangeModule> {
     return {
       ngModule: DebounceChangeModule,
       providers: [

@@ -14,7 +14,7 @@ import {TrackByFieldDirective} from './track-by-field.directive';
   ],
 })
 export class TrackByFieldModule {
-  static defaultKey(value = 'id'): ModuleWithProviders {
+  static defaultKey(value = 'id'): ModuleWithProviders<TrackByFieldModule> {
     return {
       ngModule: TrackByFieldModule,
       providers: [
