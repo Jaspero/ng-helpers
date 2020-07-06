@@ -24,7 +24,6 @@ unnecessarily.
   - [TimePassedPipe](#timepassedpipe)
   - [EnumKeyFormatPipe](#enumkeyformatpipe)
 - [Helper Classes](#helper-classes)
-  - [RxDestroy](#rxdestroy)
   - [OnChange](#onchange)
 
 ## Installation
@@ -298,23 +297,6 @@ This pipe takes a date as input and returns the elapsed time since that date as 
 #### Parameters
 
 No parameters for `ArrayFromObjectPipe`
-
-## Helper Classes
-
-### RxDestroy
-
-A dead simple helper class that's intended to extend components.
-It uses the `OnDestroy` angular life cycle hook, it calls `next()` and
-`complete()` on `destroyed$` Subject.
-
-This means that instead of calling `unsubscribe()` on all your observables
-in the `OnDestroy` hook, you can simply do this:
-
-```ts
-interval(1000)
-  .pipe(takeUntil(this.destroyed$))
-  .subscribe(_ => {});
-```
 
 ### OnChange
 

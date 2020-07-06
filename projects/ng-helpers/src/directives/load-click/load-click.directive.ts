@@ -1,8 +1,8 @@
 import {Directive, ElementRef, Inject, Input, OnInit, Renderer2} from '@angular/core';
 import {Observable} from 'rxjs';
-import {finalize, takeUntil} from 'rxjs/operators';
-import {RxDestroy} from '../../helpers/rx-destroy';
+import {finalize} from 'rxjs/operators';
 import {LOAD_CLICK_CLASS} from './load-click-class.const';
+import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 
 /**
  * Directive will add loading class to the host element on click event
@@ -10,15 +10,14 @@ import {LOAD_CLICK_CLASS} from './load-click-class.const';
  * Function save() should return observable
  */
 
+@UntilDestroy()
 @Directive({selector: '[jpLoadClick]'})
-export class LoadClickDirective extends RxDestroy implements OnInit {
+export class LoadClickDirective implements OnInit {
   constructor(
     private _el: ElementRef,
     private _renderer: Renderer2,
     @Inject(LOAD_CLICK_CLASS) private _defaultLoadClickClass: string
-  ) {
-    super();
-  }
+  ) {}
 
   @Input()
   jpLoadClick: () => Observable<any>;
@@ -72,7 +71,7 @@ export class LoadClickDirective extends RxDestroy implements OnInit {
                 this._renderer.removeAttribute(this._el.nativeElement, 'disabled');
               }
             }),
-            takeUntil(this.destroyed$)
+            untilDestroyed(this)
           )
           .subscribe();
       }

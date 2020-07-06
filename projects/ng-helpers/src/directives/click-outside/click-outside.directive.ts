@@ -1,15 +1,7 @@
-import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Input,
-  NgZone,
-  Output
-} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, EventEmitter, Input, NgZone, Output} from '@angular/core';
 import {fromEvent} from 'rxjs';
-import {filter, takeUntil} from 'rxjs/operators';
-import {RxDestroy} from '../../helpers/rx-destroy';
+import {filter} from 'rxjs/operators';
+import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 
 /**
  * Emits an event when a click action occurs that does not target the element
@@ -17,13 +9,12 @@ import {RxDestroy} from '../../helpers/rx-destroy';
  * @example
  * <div (jpClickOutside)="doSomething()"></div>
  */
+@UntilDestroy()
 @Directive({
   selector: '[jpClickOutside]'
 })
-export class ClickOutsideDirective extends RxDestroy implements AfterViewInit {
-  constructor(private _el: ElementRef, private _ngZone: NgZone) {
-    super();
-  }
+export class ClickOutsideDirective implements AfterViewInit {
+  constructor(private _el: ElementRef, private _ngZone: NgZone) {}
 
   /**
    * Any valid html event
@@ -44,7 +35,7 @@ export class ClickOutsideDirective extends RxDestroy implements AfterViewInit {
     this._ngZone.runOutsideAngular(() => {
       fromEvent<MouseEvent>(window, this.clickOutsideEventType)
         .pipe(
-          takeUntil(this.destroyed$),
+          untilDestroyed(this),
           filter(
             event =>
               !this.clickOutsideBlock &&
