@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/Jaspero/ng-helpers/compare/v4.0.1...v4.0.2) (2020-07-07)
+
+
+### Bug Fixes
+
+* removed ngneat/until-destroy ([cfc49a2](https://github.com/Jaspero/ng-helpers/commit/cfc49a298db5cecd7b3d2346dd8849fa8ccbffc5))
+
 ## [4.0.1](https://github.com/Jaspero/ng-helpers/compare/v4.0.0...v4.0.1) (2020-07-07)
 
 
