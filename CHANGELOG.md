@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/Jaspero/ng-helpers/compare/v4.0.0...v4.0.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* disable ivy ([a1ef3c1](https://github.com/Jaspero/ng-helpers/commit/a1ef3c13e2211d05f004c56f26eceefd665f8907))
+
 # [4.0.0](https://github.com/Jaspero/ng-helpers/compare/v3.4.0...v4.0.0) (2020-07-07)
 
 
