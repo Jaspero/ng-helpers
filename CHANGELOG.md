@@ -1,3 +1,23 @@
+# [4.0.0](https://github.com/Jaspero/ng-helpers/compare/v3.4.0...v4.0.0) (2020-07-07)
+
+
+### Bug Fixes
+
+* bump semantic-release version ([188b22b](https://github.com/Jaspero/ng-helpers/commit/188b22b07bd069160a569b54f41058f60510ad62))
+* bump semantic-release version ([683e185](https://github.com/Jaspero/ng-helpers/commit/683e185bc60b8333dcdcdc92f921a9972c09649e))
+* removed RxDestory ([d349e0d](https://github.com/Jaspero/ng-helpers/commit/d349e0d7d54a7970ad200aac7d64546f6d022f17))
+
+
+### Features
+
+* bump angular version ([6c7a06c](https://github.com/Jaspero/ng-helpers/commit/6c7a06c60a896341b861d31633e365a58476f7f2))
+
+
+### BREAKING CHANGES
+
+* replaced RxDestroy with https://www.npmjs.com/package/@ngneat/until-destroy
+* ng v10
+
 # [3.4.0](https://github.com/Jaspero/ng-helpers/compare/v3.3.0...v3.4.0) (2020-02-18)
 
 
