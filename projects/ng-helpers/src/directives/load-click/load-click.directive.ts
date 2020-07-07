@@ -1,8 +1,7 @@
-import {Directive, ElementRef, Inject, Input, OnInit, Renderer2} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Directive, ElementRef, Inject, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import {Observable, Subscription} from 'rxjs';
 import {finalize} from 'rxjs/operators';
 import {LOAD_CLICK_CLASS} from './load-click-class.const';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 
 /**
  * Directive will add loading class to the host element on click event
@@ -10,9 +9,8 @@ import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
  * Function save() should return observable
  */
 
-@UntilDestroy()
 @Directive({selector: '[jpLoadClick]'})
-export class LoadClickDirective implements OnInit {
+export class LoadClickDirective implements OnInit, OnDestroy {
   constructor(
     private _el: ElementRef,
     private _renderer: Renderer2,
@@ -36,6 +34,8 @@ export class LoadClickDirective implements OnInit {
 
   @Input()
   disableAttribute = true;
+
+  subscription: Subscription;
 
   ngOnInit() {
     this._renderer.listen(
@@ -62,7 +62,7 @@ export class LoadClickDirective implements OnInit {
           );
         }
 
-        this.jpLoadClick()
+        this.subscription = this.jpLoadClick()
           .pipe(
             finalize(() => {
               this._renderer.removeClass(this._el.nativeElement, defaultClass);
@@ -70,11 +70,16 @@ export class LoadClickDirective implements OnInit {
               if (this.disableAttribute) {
                 this._renderer.removeAttribute(this._el.nativeElement, 'disabled');
               }
-            }),
-            untilDestroyed(this)
+            })
           )
           .subscribe();
       }
     );
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

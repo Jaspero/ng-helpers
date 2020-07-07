@@ -1,14 +1,12 @@
-import {AfterViewInit, Directive, ElementRef, EventEmitter, Inject, Input, NgZone, Output} from '@angular/core';
-import {fromEvent} from 'rxjs';
+import {AfterViewInit, Directive, ElementRef, EventEmitter, Inject, Input, NgZone, OnDestroy, Output} from '@angular/core';
+import {fromEvent, Subscription} from 'rxjs';
 import {debounceTime, filter} from 'rxjs/operators';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {DEBOUNCE_TIME} from './debounce-time.const';
 
-@UntilDestroy()
 @Directive({
   selector: '[jpDebounceChange]'
 })
-export class DebounceChangeDirective implements AfterViewInit {
+export class DebounceChangeDirective implements AfterViewInit, OnDestroy {
   constructor(
     private _el: ElementRef,
     private _ngZone: NgZone,
@@ -36,14 +34,15 @@ export class DebounceChangeDirective implements AfterViewInit {
    */
   @Output() jpDebounceChange = new EventEmitter<string>();
 
+  subscription: Subscription;
+
   ngAfterViewInit() {
     this._ngZone.runOutsideAngular(() => {
 
       let prev = this._el.nativeElement.value;
 
-      fromEvent<any>(this._el.nativeElement, this.debounceChangeEventType)
+      this.subscription = fromEvent<any>(this._el.nativeElement, this.debounceChangeEventType)
         .pipe(
-          untilDestroyed(this),
           debounceTime(this.debounceTime || this._defaultDebounceTime),
           filter(event => {
             return event.target &&
@@ -63,5 +62,11 @@ export class DebounceChangeDirective implements AfterViewInit {
           });
         });
     });
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
