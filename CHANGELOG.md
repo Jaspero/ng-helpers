@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/Jaspero/ng-helpers/compare/v4.0.2...v4.1.0) (2020-10-06)
+
+
+### Features
+
+* JpFunction Decorator for jpLoadClick directive. ([b1bac77](https://github.com/Jaspero/ng-helpers/commit/b1bac77052b4cebd5436da1090294ca75a5e91e6))
+
 ## [4.0.2](https://github.com/Jaspero/ng-helpers/compare/v4.0.1...v4.0.2) (2020-07-07)
 
 
