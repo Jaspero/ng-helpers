@@ -8,6 +8,11 @@
 export * from './helpers/on-change';
 
 /**
+ * Decorators
+ */
+export * from './decorators/jp-function.decorator';
+
+/**
  * Directives
  */
 export * from './directives/click-outside/click-outside.module';
