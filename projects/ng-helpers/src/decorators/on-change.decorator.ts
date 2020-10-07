@@ -1,8 +1,3 @@
-/**
- * Courtesy of
- * https://blog.angularindepth.com/creatively-decouple-ngonchanges-fab95395cc6e
- */
-
 export interface SimpleChange<T> {
   firstChange: boolean;
   previousValue: T;
@@ -10,12 +5,14 @@ export interface SimpleChange<T> {
   isFirstChange: () => boolean;
 }
 
-export function OnChange<T = any>(callback: (value: T, simpleChange?: SimpleChange<T>) => void) {
+export function OnChange<T = any>(
+  callback: (value: T, simpleChange?: SimpleChange<T>) => void
+) {
   const cachedValueKey = Symbol();
   const isFirstChangeKey = Symbol();
   return (target: any, key: PropertyKey) => {
     Object.defineProperty(target, key, {
-      set: function (value) {
+      set: function(value) {
         /**
          * Change status of "isFirstChange"
          */
@@ -34,11 +31,11 @@ export function OnChange<T = any>(callback: (value: T, simpleChange?: SimpleChan
           firstChange: this[isFirstChangeKey],
           previousValue: oldValue,
           currentValue: this[cachedValueKey],
-          isFirstChange: () => this[isFirstChangeKey],
+          isFirstChange: () => this[isFirstChangeKey]
         };
         callback.call(this, this[cachedValueKey], simpleChange);
       },
-      get: function () {
+      get: function() {
         return this[cachedValueKey];
       }
     });
