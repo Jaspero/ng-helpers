@@ -3,13 +3,9 @@
  */
 
 /**
- * Helpers
- */
-export * from './helpers/on-change';
-
-/**
  * Decorators
  */
+export * from './decorators/on-change.decorator';
 export * from './decorators/jp-function.decorator';
 
 /**

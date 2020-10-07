@@ -298,10 +298,58 @@ This pipe takes a date as input and returns the elapsed time since that date as 
 
 No parameters for `ArrayFromObjectPipe`
 
+## Decorators
+
 ### OnChange
 
 A decorator for change detection on properties
-https://blog.angularindepth.com/creatively-decouple-ngonchanges-fab95395cc6e
+
+#### Example
+```typescript
+export class AppComponent {
+  @OnChange<string>((value, simpleChange) => {
+      console.log(`Title is changed to: ${value}`);
+  })
+  @Input()
+  title: string;
+}
+```
+
+### JpFunction
+Decorator for methods used by LoadClickDirective.
+<br> Wraps them in function and expects return of type Observable.
+
+#### Parameters
+
+| value | type   | description |
+| ----- | ------ | ----------- |
+| take  | number | When JpFunction is called programmatically by default append take(1) to Observable. Pass 0 to skip take operator.   |
+
+#### Example
+```typescript
+@JpFunction()
+waitFor(milliseconds: number = 1000) {
+  return of(true).pipe(
+    delay(milliseconds)
+  );
+}
+```
+
+```typescript
+@JpFunction({take: 2})
+count() {
+  return interval(10).pipe(
+    tap((index) => {
+      console.log(index);
+    })
+  );
+}
+
+ngOnInit() {
+  // Triggers console.log for 0 and 1
+  this.count();
+}
+```
 
 ## License
 
