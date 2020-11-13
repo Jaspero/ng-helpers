@@ -15,8 +15,8 @@
   },
   "homepage": "https://jaspero.co",
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/common": "^10.2.3",
+    "@angular/core": "^10.2.3"
   },
   "repository": {
     "type": "git",
