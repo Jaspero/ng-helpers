@@ -1,3 +1,44 @@
+# [4.1.0](https://github.com/Jaspero/ng-helpers/compare/v4.0.2...v4.1.0) (2020-10-06)
+
+
+### Features
+
+* JpFunction Decorator for jpLoadClick directive. ([b1bac77](https://github.com/Jaspero/ng-helpers/commit/b1bac77052b4cebd5436da1090294ca75a5e91e6))
+
+## [4.0.2](https://github.com/Jaspero/ng-helpers/compare/v4.0.1...v4.0.2) (2020-07-07)
+
+
+### Bug Fixes
+
+* removed ngneat/until-destroy ([cfc49a2](https://github.com/Jaspero/ng-helpers/commit/cfc49a298db5cecd7b3d2346dd8849fa8ccbffc5))
+
+## [4.0.1](https://github.com/Jaspero/ng-helpers/compare/v4.0.0...v4.0.1) (2020-07-07)
+
+
+### Bug Fixes
+
+* disable ivy ([a1ef3c1](https://github.com/Jaspero/ng-helpers/commit/a1ef3c13e2211d05f004c56f26eceefd665f8907))
+
+# [4.0.0](https://github.com/Jaspero/ng-helpers/compare/v3.4.0...v4.0.0) (2020-07-07)
+
+
+### Bug Fixes
+
+* bump semantic-release version ([188b22b](https://github.com/Jaspero/ng-helpers/commit/188b22b07bd069160a569b54f41058f60510ad62))
+* bump semantic-release version ([683e185](https://github.com/Jaspero/ng-helpers/commit/683e185bc60b8333dcdcdc92f921a9972c09649e))
+* removed RxDestory ([d349e0d](https://github.com/Jaspero/ng-helpers/commit/d349e0d7d54a7970ad200aac7d64546f6d022f17))
+
+
+### Features
+
+* bump angular version ([6c7a06c](https://github.com/Jaspero/ng-helpers/commit/6c7a06c60a896341b861d31633e365a58476f7f2))
+
+
+### BREAKING CHANGES
+
+* replaced RxDestroy with https://www.npmjs.com/package/@ngneat/until-destroy
+* ng v10
+
 # [3.4.0](https://github.com/Jaspero/ng-helpers/compare/v3.3.0...v3.4.0) (2020-02-18)
 
 

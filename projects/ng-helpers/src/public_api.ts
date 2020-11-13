@@ -3,10 +3,10 @@
  */
 
 /**
- * Helpers
+ * Decorators
  */
-export * from './helpers/rx-destroy';
-export * from './helpers/on-change';
+export * from './decorators/on-change.decorator';
+export * from './decorators/jp-function.decorator';
 
 /**
  * Directives
