@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/Jaspero/ng-helpers/compare/v4.1.0...v4.2.0) (2020-11-13)
+
+
+### Features
+
+* updated peerDependencies to angular 10 ([b1691c3](https://github.com/Jaspero/ng-helpers/commit/b1691c3a2df3ef1b3ee0d0fe8f03ade1e9addfe6))
+
 # [4.1.0](https://github.com/Jaspero/ng-helpers/compare/v4.0.2...v4.1.0) (2020-10-06)
 
 
