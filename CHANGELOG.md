@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/Jaspero/ng-helpers/compare/v4.2.0...v4.3.0) (2020-11-14)
+
+
+### Features
+
+* updated to angular v11 ([340dad9](https://github.com/Jaspero/ng-helpers/commit/340dad996fc090d3a8ced4163c33c1325ff699bd))
+
 # [4.2.0](https://github.com/Jaspero/ng-helpers/compare/v4.1.0...v4.2.0) (2020-11-13)
 
 
