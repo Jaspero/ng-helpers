@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/Jaspero/ng-helpers/compare/v4.3.0...v4.3.1) (2021-04-28)
+
+
+### Bug Fixes
+
+* **package:** additional package keywords ([5e9d99e](https://github.com/Jaspero/ng-helpers/commit/5e9d99ec0e2a88c26bd1b1c0ad9cb8fcaf2f5a40))
+
 # [4.3.0](https://github.com/Jaspero/ng-helpers/compare/v4.2.0...v4.3.0) (2020-11-14)
 
 
