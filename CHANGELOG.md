@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/Jaspero/ng-helpers/compare/v4.3.1...v5.0.0) (2021-06-20)
+
+
+### Features
+
+* updated to angular v12 ([05e85bf](https://github.com/Jaspero/ng-helpers/commit/05e85bf31f2dca57094dd10dd8288ca0d36ff8b2))
+
+
+### BREAKING CHANGES
+
+* angular v12 update
+
 ## [4.3.1](https://github.com/Jaspero/ng-helpers/compare/v4.3.0...v4.3.1) (2021-04-28)
 
 
