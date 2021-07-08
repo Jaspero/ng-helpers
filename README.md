@@ -163,6 +163,20 @@ forwards it along after `debounceTime`.
 
 ### TrackByFieldDirective
 
+### Example
+
+```angular2html
+<div *ngFor="let item of items; jpTrackByField:'test'"></div>
+```
+
+```ts
+@NgModule({
+  imports: [TrackByFieldModule.defaultKey()]
+})
+export class Module {}
+```
+
+
 ### LoadClickDirective
 
 Listens for the emitted click event on the target element and add loading class.
