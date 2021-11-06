@@ -31,6 +31,9 @@ export * from './directives/load-click/load-click.module';
 export * from './directives/load-click/load-click.directive';
 export * from './directives/load-click/load-click-class.const';
 
+export * from './directives/drop-zone/drop-zone.module';
+export * from './directives/drop-zone/drop-zone.directive';
+
 /**
  * Pipes
  */
