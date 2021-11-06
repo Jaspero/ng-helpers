@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/Jaspero/ng-helpers/compare/v5.0.0...v5.1.0) (2021-11-06)
+
+
+### Features
+
+* added drop-zone directive ([d1cbc8b](https://github.com/Jaspero/ng-helpers/commit/d1cbc8b53d60134100e12f4db22af285d956472e))
+
 # [5.0.0](https://github.com/Jaspero/ng-helpers/compare/v4.3.1...v5.0.0) (2021-06-20)
 
 
