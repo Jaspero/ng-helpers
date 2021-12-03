@@ -16,44 +16,31 @@
     "Utilites",
     "Helpers"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index -g"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,json,scss}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
-    "@angular/animations": "12.0.5",
-    "@angular/common": "12.0.5",
-    "@angular/compiler": "12.0.5",
-    "@angular/core": "12.0.5",
-    "@angular/forms": "12.0.5",
-    "@angular/platform-browser": "12.0.5",
-    "@angular/platform-browser-dynamic": "12.0.5",
-    "@angular/router": "12.0.5",
-    "@jaspero/ng-helpers": "3.4.0",
+    "@angular/animations": "13.0.3",
+    "@angular/common": "13.0.3",
+    "@angular/compiler": "13.0.3",
+    "@angular/core": "13.0.3",
+    "@angular/forms": "13.0.3",
+    "@angular/platform-browser": "13.0.3",
+    "@angular/platform-browser-dynamic": "13.0.3",
+    "@angular/router": "13.0.3",
+    "@jaspero/ng-helpers": "5.1.0",
     "rxjs": "6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "12.0.5",
-    "@angular/cli": "12.0.5",
-    "@angular/compiler-cli": "12.0.5",
-    "@angular/language-service": "12.0.5",
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/git": "9.0.0",
+    "@angular-devkit/build-angular": "13.0.4",
+    "@angular/cli": "13.0.4",
+    "@angular/compiler-cli": "13.0.3",
+    "@angular/language-service": "13.0.3",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "12.0.2",
     "codelyzer": "^6.0.0",
-    "husky": "2.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "6.3.4",
@@ -61,15 +48,14 @@
     "karma-coverage-istanbul-reporter": "2.0.5",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "lint-staged": "8.1.7",
-    "ng-packagr": "12.0.6",
+    "ng-packagr": "13.0.8",
     "prettier": "1.17.1",
     "protractor": "7.0.0",
-    "semantic-release": "17.2.3",
+    "semantic-release": "18.0.1",
     "ts-node": "8.3.0",
     "tsickle": ">=0.29.0",
     "tslint": "6.1.2",
-    "typescript": "4.2.4"
+    "typescript": "4.4.4"
   },
   "release": {
     "pkgRoot": "dist/@jaspero/ng-helpers",
