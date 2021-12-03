@@ -1,3 +1,15 @@
+# [5.2.0](https://github.com/Jaspero/ng-helpers/compare/v5.1.0...v5.2.0) (2021-12-03)
+
+
+### Bug Fixes
+
+* ci build not doing unecessary linting ([37fbf27](https://github.com/Jaspero/ng-helpers/commit/37fbf278b2826fffc2543af4002032f5730ee4d4))
+
+
+### Features
+
+* update angular to v13 ([f67cd91](https://github.com/Jaspero/ng-helpers/commit/f67cd9173248bf7a6fd62b040471888492d610c8))
+
 # [5.1.0](https://github.com/Jaspero/ng-helpers/compare/v5.0.0...v5.1.0) (2021-11-06)
 
 
