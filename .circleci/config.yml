@@ -24,27 +24,6 @@ jobs:
           key: *cache_key
           paths:
             - node_modules
-
-  lint:
-    <<: *job_defaults
-    steps:
-      - checkout
-      - restore_cache:
-          key: *cache_key
-      - run:
-          name: lint
-          command: npm run lint
-
-  test-lib:
-    <<: *job_defaults
-    steps:
-      - checkout
-      - restore_cache:
-          key: *cache_key
-      - run:
-          name: test
-          command: npm run test
-
   build-lib:
     <<: *job_defaults
     steps:
@@ -58,18 +37,6 @@ jobs:
           key: *dist_key
           paths:
               - dist
-
-  test-app:
-    <<: *job_defaults
-    steps:
-      - checkout
-      - restore_cache:
-          key: *cache_key
-      - restore_cache:
-          key: *dist_key
-      - run:
-          name: test
-          command: npm run test:app
 
   release:
     <<: *job_defaults
@@ -88,22 +55,12 @@ workflows:
   build-release:
     jobs:
       - install
-      - lint:
-          requires:
-            - install
-      - test-lib:
-          requires:
-            - install
       - build-lib:
           requires:
-            - lint
-            - test-lib
-      - test-app:
-          requires:
-            - build-lib
+            - install
       - release:
           requires:
-            - test-app
+            - build-lib
           filters:
             branches:
               only: master

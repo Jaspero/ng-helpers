@@ -6,9 +6,6 @@
     "start": "ng serve",
     "build": "ng build --prod ng-helpers",
     "postbuild": "cp ./README.md ./dist/@jaspero/ng-helpers && cp LICENSE ./dist/@jaspero/ng-helpers",
-    "test": "ls",
-    "test:app": "ls",
-    "lint": "ng lint ng-helpers",
     "semantic-release": "semantic-release"
   },
   "keywords": [
