@@ -48,7 +48,7 @@
     "ng-packagr": "13.0.8",
     "prettier": "1.17.1",
     "protractor": "7.0.0",
-    "semantic-release": "18.0.1",
+    "semantic-release": "19.0.3",
     "ts-node": "8.3.0",
     "tsickle": ">=0.29.0",
     "tslint": "6.1.2",
