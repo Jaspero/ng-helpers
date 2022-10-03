@@ -5,9 +5,9 @@ import {
   Input,
   Output
 } from '@angular/core';
-import {FormGroup, FormArray, FormControl} from '@angular/forms';
+import {UntypedFormGroup, UntypedFormArray, UntypedFormControl} from '@angular/forms';
 
-type entry = FormControl | FormGroup | FormArray;
+type entry = UntypedFormControl | UntypedFormGroup | UntypedFormArray;
 
 @Directive({
   selector: '[jpFormTouchOnHover]'
