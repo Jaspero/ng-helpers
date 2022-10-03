@@ -2,7 +2,7 @@ version: 2
 
 job_defaults: &job_defaults
   docker:
-    - image: circleci/node:latest
+    - image: circleci/node:lts
   environment:
     NPM_VERSION: "6.9.0"
   working_directory: ~/project/repo
