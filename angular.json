@@ -153,6 +153,7 @@
       }
     }
   },
+  "defaultProject": "ng-helpers",
   "cli": {
     "analytics": false
   }
