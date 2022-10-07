@@ -1,3 +1,10 @@
+# [5.3.0](https://github.com/Jaspero/ng-helpers/compare/v5.2.0...v5.3.0) (2022-10-03)
+
+
+### Features
+
+* Update to v14 of Angular closed [#28](https://github.com/Jaspero/ng-helpers/issues/28) ([ae15d27](https://github.com/Jaspero/ng-helpers/commit/ae15d2782e12ec1be0be7a7653a4054281d9f9d3))
+
 # [5.2.0](https://github.com/Jaspero/ng-helpers/compare/v5.1.0...v5.2.0) (2021-12-03)
 
 
