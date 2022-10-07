@@ -1,7 +1,9 @@
 name: Npm Publish
 on:
-  release:
-  types: [updated]
+  workflow_dispatch:
+  push:
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,4 +21,4 @@ jobs:
         run: |
           npm run semantic-release
         env:
-          NPM_TKOEN: ${{secrets.NPM_TKOEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
