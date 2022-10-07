@@ -1,18 +1,22 @@
 name: Npm Publish
 on:
- release:
- types: [updated]
+  release:
+  types: [updated]
 jobs:
   build:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Checkout Repo
-      uses: actions/checkout@master
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 16.x
-    — run: npm ci
-    — run: npm run semantic-release
-    env:
-      NODE_AUTH_TOKEN: ${{secrets.NPM_TKOEN}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install Dependencies
+        run: |
+          npm ci
+      - name: Release
+        run: |
+          npm run semantic-release
+        env:
+          NPM_TKOEN: ${{secrets.NPM_TKOEN}}
