@@ -6,11 +6,12 @@ jobs:
   build:
    runs-on: ubuntu-latest
    steps:
-    — uses: actions/checkout@v2
-    — uses: actions/setup-node@v1
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v1
       with:
-        node-version: 16
-        registry-url: https://registry.npmjs.org/
+        node-version: 16.x
     — run: npm ci
     — run: npm run semantic-release
     env:
