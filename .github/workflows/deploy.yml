@@ -19,6 +19,6 @@ jobs:
           npm i --force
       - name: Release
         run: |
-          npm run release
+          npm run semantic-release
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
