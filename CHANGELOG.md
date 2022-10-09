@@ -1,3 +1,12 @@
+# [5.4.0](https://github.com/Jaspero/ng-helpers/compare/v5.3.0...v5.4.0) (2022-10-09)
+
+
+### Features
+
+* release changed to github actions ([023847f](https://github.com/Jaspero/ng-helpers/commit/023847f09965f5660ebd624b8426fba744ebed94))
+* release changed to github actions ([baa5ff9](https://github.com/Jaspero/ng-helpers/commit/baa5ff9d5b22057692f6b6adc4b5b841e1766d76))
+* release changed to github actions ([4b027d9](https://github.com/Jaspero/ng-helpers/commit/4b027d9bab3b47efd4b39dd270a4485ebe7a5d07))
+
 # [5.3.0](https://github.com/Jaspero/ng-helpers/compare/v5.2.0...v5.3.0) (2022-10-03)
 
 
