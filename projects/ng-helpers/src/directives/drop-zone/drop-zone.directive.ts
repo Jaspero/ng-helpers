@@ -11,21 +11,30 @@ export class DropZoneDirective {
 
   @Input() hoverClass = 'active';
   @Output() dropped = new EventEmitter<FileList>();
-  @Output() hovered = new EventEmitter<boolean>();
+  @Output() hovered = new EventEmitter<boolean | Event>();
 
   @HostListener('drop', ['$event'])
   onDrop($event: any) {
     $event.preventDefault();
+    
     this.dropped.emit($event.dataTransfer.files);
-    this.renderer.removeClass(this.el.nativeElement, this.hoverClass);
+
+    if (this.hoverClass) {
+      this.renderer.removeClass(this.el.nativeElement, this.hoverClass);
+    }
+    
     this.hovered.emit(false);
   }
 
   @HostListener('dragover', ['$event'])
   onDragOver($event: Event) {
     $event.preventDefault();
-    this.renderer.addClass(this.el.nativeElement, this.hoverClass);
-    this.hovered.emit(true);
+    
+    if (this.hoverClass) {
+      this.renderer.addClass(this.el.nativeElement, this.hoverClass);
+    }
+
+    this.hovered.emit($event);
   }
 
   @HostListener('dragleave', ['$event'])
