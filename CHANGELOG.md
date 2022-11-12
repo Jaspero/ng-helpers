@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/Jaspero/ng-helpers/compare/v5.4.0...v5.5.0) (2022-11-12)
+
+
+### Features
+
+* **drop-zone:** emitting event on hovered; option to not set hoverClass; ([9bb613c](https://github.com/Jaspero/ng-helpers/commit/9bb613c2f4a0d393e7bee0bddad6ac98cdbe6d28))
+
 # [5.4.0](https://github.com/Jaspero/ng-helpers/compare/v5.3.0...v5.4.0) (2022-10-09)
 
 
