@@ -10,7 +10,7 @@
       "prefix": "jp",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
@@ -113,7 +113,7 @@
       "prefix": "jp",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss",
+          "style": "scss",
           "changeDetection": "OnPush"
         }
       },
