@@ -1,3 +1,12 @@
+# [5.6.0](https://github.com/Jaspero/ng-helpers/compare/v5.5.0...v5.6.0) (2023-01-09)
+
+
+### Features
+
+* angular v15 ([7f15b09](https://github.com/Jaspero/ng-helpers/commit/7f15b09484eb0dc0e89de87c5df308b93882f7d8))
+* updated to v15 ([9414f9a](https://github.com/Jaspero/ng-helpers/commit/9414f9a555c961abb7e864a6e84ee23ce3dc0781))
+* updating to v15 ([a2d51d2](https://github.com/Jaspero/ng-helpers/commit/a2d51d2207473582722c993bfa5e52c667fe8b06))
+
 # [5.5.0](https://github.com/Jaspero/ng-helpers/compare/v5.4.0...v5.5.0) (2022-11-12)
 
 
