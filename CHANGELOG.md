@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/Jaspero/ng-helpers/compare/v5.7.0...v5.8.0) (2023-01-09)
+
+
+### Features
+
+* angular ivy disabled for v15 ([70fa4c1](https://github.com/Jaspero/ng-helpers/commit/70fa4c12fdfccfa9b7323f3ff9cefb5e16609092))
+
 # [5.7.0](https://github.com/Jaspero/ng-helpers/compare/v5.6.0...v5.7.0) (2023-01-09)
 
 
