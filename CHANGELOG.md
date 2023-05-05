@@ -1,3 +1,10 @@
+# [5.10.0](https://github.com/Jaspero/ng-helpers/compare/v5.9.0...v5.10.0) (2023-05-05)
+
+
+### Features
+
+* update to angular v16 ([7d7d81a](https://github.com/Jaspero/ng-helpers/commit/7d7d81a3b6b98f9ffa5fc7aab9b689d7cef95a56))
+
 # [5.9.0](https://github.com/Jaspero/ng-helpers/compare/v5.8.0...v5.9.0) (2023-01-09)
 
 
