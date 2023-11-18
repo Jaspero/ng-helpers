@@ -1,3 +1,12 @@
+# [5.11.0](https://github.com/Jaspero/ng-helpers/compare/v5.10.0...v5.11.0) (2023-11-14)
+
+
+### Features
+
+* move to v17 of angular ([0dc2024](https://github.com/Jaspero/ng-helpers/commit/0dc2024be2d9f735017991b662bcc1098a85d305))
+* move to v17 of angular ([6da9df1](https://github.com/Jaspero/ng-helpers/commit/6da9df1bdbf6b339d8dd75b5fc9f9d5d9ebb31a9))
+* move to v17 of angular ([0958486](https://github.com/Jaspero/ng-helpers/commit/09584864db2b1946677e1400be37dd34e5ace220))
+
 # [5.10.0](https://github.com/Jaspero/ng-helpers/compare/v5.9.0...v5.10.0) (2023-05-05)
 
 
