@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/Jaspero/ng-helpers/compare/v5.11.0...v6.0.0) (2024-07-26)
+
+
+### Features
+
+* bump angular version ([a8573ad](https://github.com/Jaspero/ng-helpers/commit/a8573ad96f221ffe1083f3e9a577c6bf0c9acf44))
+
+
+### BREAKING CHANGES
+
+* ng v18
+
 # [5.11.0](https://github.com/Jaspero/ng-helpers/compare/v5.10.0...v5.11.0) (2023-11-14)
 
 
