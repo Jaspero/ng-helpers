@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/Jaspero/ng-helpers/compare/v6.0.0...v6.1.0) (2025-03-12)
+
+
+### Features
+
+* upgrade to Angular v18 ([701fb96](https://github.com/Jaspero/ng-helpers/commit/701fb9600da999fb6ae50af262c0f7b9a44ab4bc))
+
 # [6.0.0](https://github.com/Jaspero/ng-helpers/compare/v5.11.0...v6.0.0) (2024-07-26)
 
 
