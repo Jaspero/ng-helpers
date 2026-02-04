@@ -7,7 +7,8 @@ import {Directive, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2} f
  * <div (jpStopPropagation)="doSomething()"></div>
  */
 @Directive({
-  selector: '[jpStopPropagation]'
+  selector: '[jpStopPropagation]',
+  standalone: false
 })
 export class StopPropagationDirective implements OnInit {
   constructor(private _renderer: Renderer2, private _el: ElementRef) {}

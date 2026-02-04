@@ -9,7 +9,7 @@ import {LOAD_CLICK_CLASS} from './load-click-class.const';
  * Function save() should return observable
  */
 
-@Directive({selector: '[jpLoadClick]'})
+@Directive({selector: '[jpLoadClick]', standalone: false})
 export class LoadClickDirective implements OnInit, OnDestroy {
   constructor(
     private _el: ElementRef,
