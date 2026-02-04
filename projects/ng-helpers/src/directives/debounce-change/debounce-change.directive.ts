@@ -4,7 +4,8 @@ import {debounceTime, filter} from 'rxjs/operators';
 import {DEBOUNCE_TIME} from './debounce-time.const';
 
 @Directive({
-  selector: '[jpDebounceChange]'
+  selector: '[jpDebounceChange]',
+  standalone: false
 })
 export class DebounceChangeDirective implements AfterViewInit, OnDestroy {
   constructor(

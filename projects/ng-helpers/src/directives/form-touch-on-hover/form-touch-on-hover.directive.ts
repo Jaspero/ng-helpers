@@ -10,7 +10,8 @@ import {UntypedFormGroup, UntypedFormArray, UntypedFormControl} from '@angular/f
 type entry = UntypedFormControl | UntypedFormGroup | UntypedFormArray;
 
 @Directive({
-  selector: '[jpFormTouchOnHover]'
+  selector: '[jpFormTouchOnHover]',
+  standalone: false
 })
 export class FormTouchOnHoverDirective {
   @Input() jpFormTouchOnHover: entry | Array<entry>;

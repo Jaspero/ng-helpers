@@ -4,6 +4,7 @@ import {Directive, Host, Inject, Input, Optional} from '@angular/core';
 @Directive({
   // tslint:disable-next-line
   selector: '[ngForJpTrackByField]',
+  standalone: false
 })
 export class TrackByFieldDirective<T> {
 

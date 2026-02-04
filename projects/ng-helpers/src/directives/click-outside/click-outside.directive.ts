@@ -9,7 +9,8 @@ import {filter} from 'rxjs/operators';
  * <div (jpClickOutside)="doSomething()"></div>
  */
 @Directive({
-  selector: '[jpClickOutside]'
+  selector: '[jpClickOutside]',
+  standalone: false
 })
 export class ClickOutsideDirective implements AfterViewInit, OnDestroy {
   constructor(private _el: ElementRef, private _ngZone: NgZone) {}

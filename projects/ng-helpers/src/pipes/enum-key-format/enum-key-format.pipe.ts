@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'jpEnumKeyFormat'
+  name: 'jpEnumKeyFormat',
+  standalone: false
 })
 export class EnumKeyFormatPipe implements PipeTransform {
 

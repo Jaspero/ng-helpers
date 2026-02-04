@@ -9,7 +9,8 @@ import {Pipe, PipeTransform} from '@angular/core';
  *
  */
 @Pipe({
-  name: 'jpEnum'
+  name: 'jpEnum',
+  standalone: false
 })
 export class EnumPipe implements PipeTransform {
   public transform(value): Array<{key: number; value: string}> {

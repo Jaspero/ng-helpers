@@ -11,7 +11,8 @@ export enum TimePassedType {
 }
 
 @Pipe({
-  name: 'jpTimePassed'
+  name: 'jpTimePassed',
+  standalone: false
 })
 export class TimePassedPipe implements PipeTransform {
 
