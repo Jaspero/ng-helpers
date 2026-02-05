@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/Jaspero/ng-helpers/compare/v6.1.0...v6.2.0) (2026-02-05)
+
+
+### Features
+
+* upgrade to Angular v19 ([a438535](https://github.com/Jaspero/ng-helpers/commit/a4385351e9076c6371ea5f2607da6951f9075dcd))
+
 # [6.1.0](https://github.com/Jaspero/ng-helpers/compare/v6.0.0...v6.1.0) (2025-03-12)
 
 
